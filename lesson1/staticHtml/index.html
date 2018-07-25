@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Static Filesystem</title>
+    <style>
+        body {
+            margin: 2em;
+        }
+        h1 {
+            text-align: center;
+        }
+        .wrapper {
+            max-width: 50vw;
+            margin: 2vh auto;
+            font-size: 20px;
+            line-height: 1.2;
+            background: linear-gradient(#efefef 50%, #fff 50%, #fff 100%);
+            background-size: 100% 2.4em;
+            outline: 3px solid #cecece;
+        }
+        .folder > .fs {
+            margin-left: 1.2em;
+        }
+        .folder > .title:before {
+            content: '\1f5bf';
+            color: #78d3f8;
+            margin-right: .2em;
+        }
+        .file > .title:before {
+            content: '\1f5b9';
+            color: rebeccapurple;
+            margin-right: .2em;
+        }
+    </style>
+</head>
+<body>
+<h1>Static Filesystem</h1>
+<div class="wrapper">
+    <div class="folder">
+        <div class="title">folder_1</div>
+        <div class="fs">
+            <div class="folder">
+                <div class="title">folder_1</div>
+                <div class="fs">
+                    <div class="folder">
+                        <div class="title">folder_1</div>
+                        <div class="fs">
+                            <div class="file">
+                                <div class="title">file_1.txt</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="folder">
+                        <div class="title">folder_2</div>
+                        <div class="fs">
+                            <div class="file">
+                                <div class="title">file_1.txt</div>
+                            </div>
+                            <div class="file">
+                                <div class="title">file_2.txt</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="folder">
+                        <div class="title">folder_3</div>
+                    </div>
+                    <div class="file">
+                        <div class="title">file_1.txt</div>
+                    </div>
+                    <div class="file">
+                        <div class="title">file_2.txt</div>
+                    </div>
+                </div>
+            </div>
+            <div class="folder">
+                <div class="title">folder_2</div>
+                <div class="fs">
+                    <div class="folder">
+                        <div class="title">folder_1</div>
+                    </div>
+                    <div class="folder">
+                        <div class="title">folder_2</div>
+                        <div class="fs">
+                            <div class="file">
+                                <div class="title">file_1.txt</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="file">
+                        <div class="title">file_1.txt</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="folder">
+        <div class="title">folder_2</div>
+        <div class="fs">
+            <div class="folder">
+                <div class="title">folder_1</div>
+                <div class="fs">
+                    <div class="folder">
+                        <div class="title">folder_1</div>
+                    </div>
+                </div>
+            </div>
+            <div class="file">
+                <div class="title">file_1.txt</div>
+            </div>
+        </div>
+    </div>
+    <div class="folder">
+        <div class="title">folder_3</div>
+        <div class="fs">
+            <div class="folder">
+                <div class="title">folder_1</div>
+                <div class="fs">
+                    <div class="folder">
+                        <div class="title">folder_1</div>
+                    </div>
+                    <div class="file">
+                        <div class="title">file_1.txt</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="file">
+        <div class="title">file_1.txt</div>
+    </div>
+    <div class="file">
+        <div class="title">file_2.txt</div>
+    </div>
+</div>
+</body>
+</html>
