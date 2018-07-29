@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey Simple</title>
+</head>
+<body>
+<button id="startSurvey">Start Survey</button>
+<script>
+   (function () {
+      document.addEventListener("DOMContentLoaded", function() {
+         document.getElementById('startSurvey').addEventListener('click', survey);
+      });
+
+      function survey() {
+         const data = {};
+
+         data.name = prompt("Hello! What's your name?");
+         data.nickName = prompt("What's your nick name?");
+         data.favoriteOS = prompt("What's your favorite OS?");
+         data.hasBeer = confirm("Do you have a beer?");
+         data.displayData = confirm("Do you want to display your data?");
+
+         const notDisplayOutput = "Ok. It's your choice.";
+         const output = "Your Name is " + data.name + "\n" +
+                        "Your Nick Name is " + data.nickName + "\n" +
+                        "Your favorite OS is " + data.favoriteOS + "\n" +
+                        "You are " + (data.hasBeer?"so":"not") + " friendly!";
+
+         alert(data.displayData ? output : notDisplayOutput);
+      }
+   })();
+</script>
+</body>
+</html>

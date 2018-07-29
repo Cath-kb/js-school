@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey</title>
+</head>
+<body>
+<button id="startSurvey">Start Survey</button>
+<script>
+   (function () {
+      document.addEventListener("DOMContentLoaded", function() {
+         document.getElementById('startSurvey').addEventListener('click', survey);
+      });
+
+      function survey() {
+         const schema = {
+            name: {
+               question: "Hello! What's your name?",
+               outputTemplate: "Your Name is"
+            },
+            nickName: {
+               question: "What's your nick name?",
+               outputTemplate: "Your Nick Name is"
+            },
+            favoriteOS: {
+               question: "What's your favorite OS?",
+               outputTemplate: "Your favorite OS is"
+            },
+            hasBeer: {
+               question: "Do you have a beer?",
+               outputTemplate: data => "You are " + (data.hasBeer?"so":"not") + " friendly!",
+               type: "bool",
+            },
+            displayData: {
+               question: "Do you want to display your data?",
+               outputTemplate: "Ok. It's your choice.",
+               type: "bool",
+            }
+         };
+         const data = {};
+
+         for (const key in schema) {
+            const {question, type} = schema[key];
+            data[key] = getAnswer(question, type);
+         }
+
+         const output = data.displayData ? formatData(data, schema) : schema.displayData.outputTemplate;
+
+         displayMessage(output);
+      }
+
+      function formatData(data, schema) {
+         let result = "";
+         Object.keys(data).forEach(function(item) {
+            if (item === "displayData") return;
+            const outputTemplate = schema[item].outputTemplate;
+            const isFunction = (typeof outputTemplate) === "function";
+            result += isFunction ? outputTemplate(data) : outputTemplate + " " + data[item] + "\n";
+         });
+         return result;
+      }
+
+      function getAnswer(question, type) {
+         if (type === "bool") {
+            return confirm(question);
+         }
+         return prompt(question);
+      }
+
+      function displayMessage(message) {
+         alert(message);
+      }
+   })();
+</script>
+</body>
+</html>
