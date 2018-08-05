@@ -9,3 +9,7 @@
 
 * Simple Survey: [src](https://github.com/Cath-kb/js-school/tree/master/lesson2/surveySimple.html), [demo](https://cath-kb.github.io/js-school/lesson2/surveySimple.html)
 * Survey: [src](https://github.com/Cath-kb/js-school/tree/master/lesson2/survey.html), [demo](https://cath-kb.github.io/js-school/lesson2/survey.html)
+
+# Lesson 3
+
+* Payroll Statistic: [src](https://github.com/Cath-kb/js-school/tree/master/lesson3/payroll), [demo](https://cath-kb.github.io/js-school/lesson3/payroll/index.html)
