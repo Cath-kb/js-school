@@ -1,0 +1,111 @@
+body {
+    max-width: 40vw;
+    margin: 2em  auto;
+    position: relative;
+    left: -150px;
+}
+h1 {
+    text-align: center;
+}
+::-moz-selection {
+    background: transparent;
+}
+::selection {
+    background: transparent;
+}
+.wrapper {
+    margin: 2vh auto;
+    font-size: 20px;
+    line-height: 1.2;
+    background: linear-gradient(#efefef 50%, #fff 50%, #fff 100%);
+    background-size: 100% 2.4em;
+    outline: 3px solid #cecece;
+}
+.actions {
+    display: flex;
+    justify-content: space-between;
+}
+.fs {
+    display: block;
+    padding-left: 1.2em;
+}
+.folder.collapsed > .fs {
+    display: none;
+}
+.folder {
+    position: relative;
+}
+.marker,
+[class*=marker] {
+    position: absolute;
+    top: .12em;
+    left: -1em;
+    width: 0.8em;
+    height: 0.8em;
+    line-height: .8;
+    font-family: sans-serif;
+    text-align: center;
+    border: 1px solid;
+    cursor: pointer;
+}
+.folder.collapsed > .marker:before,
+.marker-collapse:before {
+    content: '\2B';
+}
+.folder.expanded > .marker:before,
+.marker-expand:before {
+    content: '\2212';
+}
+.title {
+    padding: 0 .2em;
+}
+.title:hover {
+    background: #dfe5fb;
+}
+.folder, .file {
+    cursor: default;
+}
+.folder > .title:before {
+    content: '\1f5bf';
+    color: #78d3f8;
+    margin-right: .2em;
+}
+.folder:not(.collapsed):not(.expanded) > .title {
+    color: #9f9f9f;
+    cursor: default;
+}
+.folder:not(.collapsed):not(.expanded) > .title:before {
+    opacity: 0.6;
+}
+.file > .title:before {
+    content: '\1f5b9';
+    color: rebeccapurple;
+    margin-right: .2em;
+}
+[data-selected]:not(.collapsed):not(.expanded) > .title,
+[data-selected] > .title {
+    color: #fff;
+    background: #0008bb;
+    box-shadow: inset 0 0 0 1px;
+}
+.file[data-selected] > .title:before {
+    color: #fff;
+    font-weight: bold;
+}
+.folder[data-selected]:not(.collapsed):not(.expanded) > .title {
+    color: rgba(255, 255, 255, .6);
+}
+.description {
+    position: absolute;
+    left: 100%;
+    margin-left: 2em;
+    top: 0;
+    margin-top: 5em;
+    width: 300px;
+}
+.description [class*=marker] {
+    position: relative;
+    display: inline-block;
+    top: -.03em;
+    left: initial;
+}
