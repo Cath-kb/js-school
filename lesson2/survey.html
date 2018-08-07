@@ -6,10 +6,11 @@
 </head>
 <body>
 <button id="startSurvey">Start Survey</button>
+<div id="output"></div>
 <script>
    (function () {
       document.addEventListener("DOMContentLoaded", function() {
-         document.getElementById('startSurvey').addEventListener('click', survey);
+         document.getElementById("startSurvey").addEventListener("click", survey);
       });
 
       function survey() {
@@ -44,9 +45,23 @@
             data[key] = getAnswer(question, type);
          }
 
-         const output = data.displayData ? formatData(data, schema) : schema.displayData.outputTemplate;
+         const {displayData} = data;
+         const outputElement = document.getElementById("output");
 
-         displayMessage(output);
+         if (displayData) {
+            renderData(formatData(data, schema), outputElement);
+         } else {
+            clearData(outputElement);
+            displayMessage(schema.displayData.outputTemplate);
+         }
+      }
+
+      function renderData(data, outputElement) {
+         outputElement.innerHTML = data;
+      }
+
+      function clearData(outputElement) {
+         outputElement.innerHTML = "";
       }
 
       function formatData(data, schema) {
@@ -55,7 +70,8 @@
             if (item === "displayData") return;
             const outputTemplate = schema[item].outputTemplate;
             const isFunction = (typeof outputTemplate) === "function";
-            result += isFunction ? outputTemplate(data) : outputTemplate + " " + data[item] + "\n";
+            const output = isFunction ? outputTemplate(data) : `<strong>${outputTemplate}</strong> ${data[item]}`;
+            result += `<p>${output}</p>`;
          });
          return result;
       }
