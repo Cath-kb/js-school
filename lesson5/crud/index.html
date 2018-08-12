@@ -4,27 +4,32 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-  <script src="inital_data.js"></script>
+  <script src="initial_data.js"></script>
   <script src="store.js"></script>
   <script src="app.js"></script>
 
-  <title>Title</title>
+  <title>CRUD App</title>
 </head>
 <body>
 <div class="container">
 
+  <div class="row my-4">
+    <div class="col-12">
+      <h1>CRUD App</h1>
+    </div>
+  </div>
+
   <div class="row">
-    <form name="myEditForm">
-      <input type="hidden" name="__innerID" id="__innerID" value="-1">
+    <form name="datumForm" class="col-6">
+      <input type="hidden" name="__innerID" id="__innerID">
 
       <div class="form-group">
-        <label for="first">First</label>
-        <input name="first" id="first" class="form-control"  aria-describedby="emailHelp" placeholder="Enter email">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <label for="first">First Name</label>
+        <input name="first" id="first" class="form-control" placeholder="First Name">
       </div>
       <div class="form-group">
-        <label for="last">Last</label>
-        <input name="last" id="last"  class="form-control" placeholder="LastName">
+        <label for="last">Last Name</label>
+        <input name="last" id="last"  class="form-control" placeholder="Last Name">
       </div>
 
       <div class="form-group">
@@ -32,33 +37,43 @@
         <input name="handle" id="handle" type="text" class="form-control" placeholder="Handle">
       </div>
 
-
       <button type="button" class="btn btn-primary">Submit</button>
+      <button type="reset" class="btn btn-secondary">Clear</button>
     </form>
+
+    <aside class="col-6 text-right">
+      <p><strong>How To:</strong></p>
+      <p><strong>Alt&nbsp;+&nbsp;Double Click</strong> - remove table row</p>
+      <p><strong>Click</strong> - select table row for edit</p>
+    </aside>
   </div>
 
+  <div class="row my-5">
+    <div class="col-12">
+      <p>
+        <input type="checkbox" id="sync" checked>
+        <label for="sync">Synchronize table with store</label>
+      </p>
+      <table class="table table-hover table-striped">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Handle</th>
+        </tr>
+        </thead>
+        <tbody id="dataContainer">
 
-  <div class="row" style="margin-top: 50px;">
-
-    <table class="table">
-      <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-      </thead>
-      <tbody id="ourDataView">
-
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+    </div>
   </div>
 
 </div>
 
 <script>
-  const app = new App(INITIAL_DATA, 'ourDataView', 'myEditForm');
+  const app = new App(INITIAL_DATA, 'dataContainer', 'datumForm');
   app.run();
 </script>
 </body>

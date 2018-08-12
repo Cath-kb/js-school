@@ -1,67 +1,82 @@
-
 class App {
 
-  constructor(initData, dataTableId, formName) {
-    this._dataTableId = dataTableId;
-    this._formName = formName;
+  constructor(initData, dataContainerId, datumFormName) {
+    this._dataContainerId = dataContainerId;
+    this._datumFormName = datumFormName;
 
     this._store = new Store(initData);
-
-    this._store.subscribe(this._handleChangeData.bind(this));
-    this._store.notifyListeners();
-
-    this._bindEventListeners();
+    this._renderStoreDataBound = this._renderStoreData.bind(this);
   }
 
   run() {
-    this._store.addRecord({
-      first: 'test',
-      last: 'test',
-      handle: 'test',
-    })
-    // console.log();
+    this._handleDataStoreRenderSync();
+    this._addDomEventListeners();
   }
 
-  _getTable() {
-    return document.getElementById(this._dataTableId);
+  _getDataContainer() {
+    return document.getElementById(this._dataContainerId);
   }
 
-  _handleChangeData() {
-    const newData = this._store.getRecords();
-    const parentTable = this._getTable();
-    // debugger;
-    parentTable.innerHTML = '';
-    newData.forEach(rowData => {
-      const row = this._renderRow(rowData);
-      row.setAttribute("id", rowData.__innerID);
-      parentTable.appendChild(row);
+  _getSubmitFormButton() {
+    return document.forms[this._datumFormName].querySelector('button[type=button]');
+  }
+
+  _getResetFormButton() {
+    return document.forms[this._datumFormName].querySelector('button[type=reset]');
+  }
+
+  _getDataStoreRenderSyncCheckbox() {
+    return document.getElementById('sync');
+  }
+
+  _renderStoreData() {
+    const data = this._store.getRecords();
+    this._renderRecords(data);
+  }
+
+  _renderRecords(data) {
+    const dataContainer = this._getDataContainer();
+
+    dataContainer.innerHTML = '';
+    data.forEach(recordData => {
+      const record = this._renderRecord(recordData);
+      record.setAttribute("id", recordData.__innerID);
+      dataContainer.appendChild(record);
     });
   }
 
-  _renderRow(rowData) {
-    const row = document.createElement('tr');
+  _renderRecord(data) {
+    const el = document.createElement('tr');
+    const fieldsToRender = ['id', 'first', 'last', 'handle'];
 
-    row.appendChild(this._generateTd(rowData.id));
-    row.appendChild(this._generateTd(rowData.first));
-    row.appendChild(this._generateTd(rowData.last));
-    row.appendChild(this._generateTd(rowData.handle));
+    fieldsToRender.forEach(field => {
+      el.appendChild(this._renderField(data[field]));
+    });
 
-    return row;
+    return el;
   }
 
-  _generateTd(tdText) {
-    const td = document.createElement('td');
-    td.appendChild(document.createTextNode(tdText));
+  _renderField(data) {
+    const el = document.createElement('td');
+    el.appendChild(document.createTextNode(data));
 
-    return td;
+    return el;
   }
 
-  _handleDbClick(event) {
-    if (event.altKey) {
-      const parentTable = this._getTable();
-      parentTable.removeChild(
-        event.target.parentElement
-      );
+  _handleDblClick(event) {
+    if (!event.altKey) {
+      return;
+    }
+
+    const isConfirmed = confirm('Are you sure you want to delete the record?');
+    if (!isConfirmed) return;
+
+    const recordEl = event.target.parentElement;
+    const recordId = recordEl.getAttribute('id');
+    this._store.deleteRecord(recordId);
+
+    if (this._getFormInnerIDElement().value === recordId) {
+        this._resetFormData();
     }
   }
 
@@ -70,30 +85,76 @@ class App {
       return;
     }
 
-    const targetRow = event.target.parentElement;
-    const recordId = targetRow.getAttribute('id');
-    const rowData = this._store.getRecordById(recordId);
-    this._populateToForm(rowData);
-    // debugger;
+    const recordEl = event.target.parentElement;
+    const recordId = recordEl.getAttribute('id');
+    const recordData = this._store.getRecordById(recordId);
+    this._setFormData(recordData);
   }
 
-  _populateToForm(rowData) {
-    const form = document.forms[this._formName];
-    const fields = Object.keys(rowData);
-    fields.forEach((itemName) => {
-      const el = form.elements[itemName];
+  _handleFormSubmit(event) {
+    const { form } = event.target;
+    const recordId = form.elements.__innerID.value;
+
+    const values = {};
+    for (let el of form.elements) {
+      if (!el.name || el.name ==='__innerID') continue;
+      values[el.name] = el.value;
+    }
+
+    const isNewRecord = !recordId;
+    if (isNewRecord) {
+      this._store.addRecord(values);
+    } else {
+      this._store.updateRecord(recordId, values);
+    }
+  }
+
+  _handleFormReset() {
+    this._resetFormData();
+  }
+
+  _handleDataStoreRenderSync() {
+    const isSync = this._getDataStoreRenderSyncCheckbox().checked;
+
+    if (isSync) {
+      this._renderStoreData();
+      this._store.subscribe(this._renderStoreDataBound);
+    } else {
+      this._store.unsubscribe(this._renderStoreDataBound);
+    }
+  }
+
+  _setFormData(recordData) {
+    const form = document.forms[this._datumFormName];
+    const fields = Object.keys(recordData);
+    fields.forEach(field => {
+      const el = form.elements[field];
       if (!el) {
         return;
       }
-      el.value = rowData[itemName];
-
+      el.value = recordData[field];
     });
   }
 
-  _bindEventListeners() {
-    const parentTable = this._getTable();
-    parentTable.addEventListener('dblclick', this._handleDbClick.bind(this));
-    parentTable.addEventListener('click', this._handleClick.bind(this));
+  _resetFormData() {
+    this._getFormInnerIDElement().value = '';
+  }
+
+  _getFormInnerIDElement() {
+    return document.forms[this._datumFormName].elements.__innerID;
+  }
+
+  _addDomEventListeners() {
+    const dataContainer = this._getDataContainer();
+    const submitFormButton = this._getSubmitFormButton();
+    const resetFormButton = this._getResetFormButton();
+    const dataStoreRenderSyncCheckbox = this._getDataStoreRenderSyncCheckbox();
+
+    dataContainer.addEventListener('dblclick', this._handleDblClick.bind(this));
+    dataContainer.addEventListener('click', this._handleClick.bind(this));
+    submitFormButton.addEventListener('click', this._handleFormSubmit.bind(this));
+    resetFormButton.addEventListener('click', this._handleFormReset.bind(this));
+    dataStoreRenderSyncCheckbox.addEventListener('click', this._handleDataStoreRenderSync.bind(this));
   }
 
 }
