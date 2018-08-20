@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Polyfills</title>
+    <style>
+        h1 {text-align: center;}
+        script {
+            display:block;
+            white-space:pre-wrap;
+            font-family:monospace;
+        }
+    </style>
+    <script src="polyfills.js"></script>
+</head>
+<body>
+<h1>Please open the Developers Tools (Press F12) to see results</h1>
+<script>
+    // map
+    {
+        const arr = ['a', 'b', undefined,, 'c'];
+        const fn = (el, ind, arr) => el+ind+arr.join(' ');
+        console.log('map: ', arr.map(fn), arr._map(fn));
+    }
+
+    // reduce
+    {
+        const arr = [2, ,, 3, 4, 5];
+        const fn = (accumulator, currentValue, index, array) => { return accumulator + currentValue };
+        const initialValue = 1;
+
+        console.log('reduce: ', arr.reduce(fn, initialValue), arr._reduce(fn, initialValue));
+        console.log('reduceRight: ', arr.reduceRight(fn, initialValue), arr._reduceRight(fn, initialValue));
+    }
+
+    // filter
+    {
+        const arr = ['spray', 'limit', 'elite',, 'exuberant', 'destruction', 'present'];
+        const fn = word => word.length > 6;
+        const thisArg = { x: 0 };
+
+        console.log('filter: ', arr.filter(fn, thisArg), arr._filter(fn, thisArg));
+    }
+
+    // forEach
+    {
+        const arr = [2, undefined,, 3, 4, 5];
+        const fn = (element, index, array) => {
+            if (index==0) console.log('forEach:');
+            console.log(`a[${index}] = ${element} in array: ${array}`)
+        };
+
+        arr.forEach(fn);
+        arr._forEach(fn);
+    }
+
+    // some, every
+    {
+        const arr = [2, undefined,, 3, 4, 5];
+        const fn = elem => elem > 3;
+
+        console.log('some: ', arr.some(fn), arr._some(fn));
+        console.log('every: ', arr.every(fn), arr._every(fn));
+    }
+</script>
+</body>
+</html>

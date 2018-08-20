@@ -23,3 +23,6 @@
 * CRUD App: [src](https://github.com/Cath-kb/js-school/tree/master/lesson5/crud), [demo](https://cath-kb.github.io/js-school/lesson5/crud/index.html)
 
   diff from source workshop result: [link](https://github.com/Cath-kb/js-school/compare/data-form-table-bind...crud)
+
+## Lesson 6 (JS Basics - payroll review, 3. polyfills)
+* Polyfills for array walk functions (map, reduce, reduceRight, filter, forEach, some, every): [src](https://github.com/Cath-kb/js-school/tree/master/lesson6/polyfills.js), [demo](https://cath-kb.github.io/js-school/lesson6/index.html)
