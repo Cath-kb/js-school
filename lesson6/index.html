@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <title>Polyfills</title>
     <style>
-        h1 {text-align: center;}
+        h1, h2 {text-align: center;}
         script {
             display:block;
             white-space:pre-wrap;
             font-family:monospace;
         }
+        a[href]:before {
+            content: attr(href);
+        }
     </style>
     <script src="polyfills.js"></script>
 </head>
 <body>
-<h1>Please open the Developers Tools (Press F12) to see results</h1>
+<h1>Polyfill usage. To see results please open the Developers Tools (Press F12)</h1>
+<h2>Polyfill source: <a href="polyfills.js" target="_blank"></a></h2>
 <script>
     // map
     {
