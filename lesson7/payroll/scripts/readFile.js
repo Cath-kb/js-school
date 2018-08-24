@@ -1,4 +1,4 @@
-function readFile() {
+export default function readFile() {
    return (
       `MONTH,DEPARTMENT,EMPLOYEE,AMOUNT
 2018-01,Legals,Smith A.,14289.66
