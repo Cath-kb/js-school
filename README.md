@@ -26,3 +26,8 @@
 
 ## Lesson 6 (JS Basics - payroll review, 3. polyfills)
 * Polyfills for array walk functions (map, reduce, reduceRight, filter, forEach, some, every): [src](https://github.com/Cath-kb/js-school/tree/master/lesson6/polyfills.js), [demo](https://cath-kb.github.io/js-school/lesson6/index.html)
+
+## Lesson 7 (JS - scopes, closures, 4. modularize payroll)
+* Payroll refactor (modules, more Array methods): [src](https://github.com/Cath-kb/js-school/tree/master/lesson7/payroll), [demo](https://cath-kb.github.io/js-school/lesson7/payroll/index.html)
+
+  diff from lesson 3 payroll: [link](https://github.com/Cath-kb/js-school/compare/payroll...payroll-modules?diff=split&name=payroll-modules)
