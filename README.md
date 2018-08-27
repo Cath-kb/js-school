@@ -31,3 +31,6 @@
 * Payroll refactor (modules, more Array methods): [src](https://github.com/Cath-kb/js-school/tree/master/lesson7/payroll), [demo](https://cath-kb.github.io/js-school/lesson7/payroll/index.html)
 
   diff from lesson 3 payroll: [link](https://github.com/Cath-kb/js-school/compare/payroll...payroll-modules?diff=split&name=payroll-modules)
+
+## Lesson 8 (JS - OOP in JS, 5. School Simulator) [task](https://github.com/pdffiller/js-react-school-tasks/blob/master/JS%20Basics/07-oop-school.md)
+* School Simulator: [src](https://github.com/Cath-kb/js-school/tree/master/lesson8/simSchool), [demo](https://cath-kb.github.io/js-school/lesson8/simSchool/index.html)
