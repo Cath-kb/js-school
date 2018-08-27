@@ -8,8 +8,8 @@ export default class Admin extends Actor {
         this._truancyMap = new Map();
     }
 
-    get truancyMap() {
-        return this._truancyMap;
+    getTruancyByGroup(group) {
+        return this._truancyMap.get(group);
     }
 
     holdLessons(group) {
