@@ -6,45 +6,46 @@ export class SchoolView {
 
     render() {
         const { groups, groupSize, semesterDuration } = this._school;
+        const root = this._root;
 
-        this._renderTitle('School Simulator');
+        this._renderTitle('School Simulator', root);
 
         this._renderSchoolInfo({
             'group size': groupSize,
             'semester duration': semesterDuration,
             'groups count': groups.length,
-        });
+        }, root);
 
-        groups.forEach((group, index) => this._renderGroup(group, index+1));
+        groups.forEach((group, index) => this._renderGroup(group, index+1, root));
     }
 
-    _renderTitle(title) {
+    _renderTitle(title, root) {
         const el = document.createElement('h1');
         el.classList.add('my-5');
         el.innerHTML = title;
-        this._root.appendChild(el);
+        root.appendChild(el);
     }
 
-    _renderSchoolInfo(info) {
+    _renderSchoolInfo(info, root) {
         const el = document.createElement('div');
         for (const key in info) {
             el.innerHTML += `<p><strong class="text-capitalize">${key}:</strong> ${info[key]}</p>`
         }
-        this._root.appendChild(el);
+        root.appendChild(el);
     }
 
-    _renderGroup(group, number) {
+    _renderGroup(group, number, root) {
         const el = document.createElement('div');
         el.classList.add('my-5');
 
-        el.insertAdjacentHTML('beforeend', `<h2>Group: ${number}</h2>`);
+        el.insertAdjacentHTML('beforeend', `<h2>Group #${number}</h2>`);
         this._renderSpecs(group.specializations, el);
         el.insertAdjacentHTML('beforeend', `<p>Is successfully finished: <strong class="text-uppercase">${group.isSuccessfullyFinished}</strong></p>`);
         this._renderAdmin(group.admin, group.admin.getTruancyByGroup(group), el);
         this._renderTeachers(group.teachers, el);
         this._renderStudents(group.students, el);
 
-        this._root.appendChild(el);
+        root.appendChild(el);
     }
 
     _renderAdmin(admin, truancy, root) {
@@ -98,6 +99,7 @@ export class SchoolView {
 
         const thead = document.createElement('thead');
         const titles = `<tr>
+                            <th>#</th>
                             <th>specialization</th>
                             <th>name</th>
                             <th class="text-center">age</th>
@@ -108,8 +110,9 @@ export class SchoolView {
         table.appendChild(thead);
 
         const tbody = document.createElement('tbody');
-        teachers.forEach(teacher => {
+        teachers.forEach((teacher, index) => {
             tbody.innerHTML += `<tr>
+                                    <td>${index + 1}</td>
                                     <td>${teacher.specialization}</td>
                                     <td>${teacher.name}</td>
                                     <td class="text-center">${teacher.age}</td>
@@ -131,6 +134,7 @@ export class SchoolView {
 
         const thead = document.createElement('thead');
         const titles = `<tr>
+                            <th>#</th>
                             <th>name</th>
                             <th class="text-center">age</th>
                             <th class="text-center">truancy amount</th>
@@ -142,11 +146,12 @@ export class SchoolView {
         table.appendChild(thead);
 
         const tbody = document.createElement('tbody');
-        students.forEach(student => {
+        students.forEach((student, index) => {
             const isGraduated = student.specialNotes.graduated;
             const isSuperStudent = student.specialNotes.superStudent;
 
             tbody.innerHTML += `<tr class="${isGraduated ? '' : 'table-danger'} ${isSuperStudent ? 'table-success' : ''}">
+                                    <td>${index + 1}</td>
                                     <td>${student.name}</td>
                                     <td class="text-center">${student.age}</td>
                                     <td class="text-center">${student.truancyAmount}</td>

@@ -23,12 +23,14 @@ export default class Teacher extends Actor {
                 return;
             }
 
-            // from https://en.wikipedia.org/wiki/Exponential_distribution
-            const lambda = 1 + 1/11; // provide median = 5.5 for 5 scientific works
-            const exponentialRandom = -Math.log(Math.random()) / (Math.LN2 * lambda / (this._scientificWorksAmount + 1));
-            const mark = Math.min(exponentialRandom, 10);
-
+            const mark = Math.min(this._exponentialRandom(this._scientificWorksAmount), 10);
             student.addMark(this.specialization, mark);
         })
+    }
+
+    _exponentialRandom(x) {
+        // from https://en.wikipedia.org/wiki/Exponential_distribution
+        const lambda = 1 + 1 / 11; // provide median = 5.5 from range [1..10] for x = 5
+        return -Math.log(Math.random()) / (Math.LN2 * lambda / (x + 1));
     }
 }
