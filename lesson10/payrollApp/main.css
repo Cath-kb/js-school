@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    font-family: monospace;
+}
+main {
+    margin: 2em auto;
+    max-width: 50vw;
+    padding: 1em 2em 2.5em;
+    border: 3px outset;
+}
+h1 {
+    text-align: center;
+    color: #008000;
+}
+table {
+    margin: 2em 0;
+    font-size: 1.2em;
+    border-collapse: collapse;
+}
+.fullWidth {
+    width: 100%;
+}
+th {
+    text-transform: capitalize;
+}
+th, td {
+    padding: .4em .6em;
+    border: 1px solid;
+}
+tr:nth-child(2n+1) > td {
+    background-color: #efefef;
+}
+td:last-child {
+    text-align: right;
+}
+#payrollContent {
+    display: none;
+    overflow: hidden;
+}
+.button {
+    margin-right: 1em;
+}
+#payrollContent.open {
+    display: block;
+}
+
