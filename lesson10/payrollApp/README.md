@@ -1,0 +1,2 @@
+## Lesson 10 (Web App Basics 1. webpack npm) [task](https://github.com/pdffiller/js-react-school-tasks/blob/master/Web%20App%20Basics/01-webpack-npm.md)
+* Payroll Web App (use webpack, extract modules): [src](https://github.com/Cath-kb/js-school/tree/master/lesson10/payrollApp), [dist](https://github.com/Cath-kb/js-school/tree/gh-pages/lesson10/payrollApp), [demo](https://cath-kb.github.io/js-school/lesson10/payrollApp/)
