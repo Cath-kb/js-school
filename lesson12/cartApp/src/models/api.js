@@ -1,6 +1,6 @@
 import axios from 'axios';
 
 export default axios.create({
-  // baseURL: 'http://cart.school.pdffillers.com/api/',
-  baseURL: 'http://cart.brutgroot.com/api/',
+  // baseURL: 'https://cart.school.pdffillers.com/api/',
+  baseURL: 'https://cart.brutgroot.com/api/',
 });
