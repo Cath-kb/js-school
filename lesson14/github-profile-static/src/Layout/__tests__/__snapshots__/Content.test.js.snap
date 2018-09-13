@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Content should be rendered without errors 1`] = `
+<div>
+  <p>
+    test
+  </p>
+</div>
+`;
