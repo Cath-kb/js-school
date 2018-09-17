@@ -1,0 +1,2 @@
+## Lesson 14 (React / Redux - Introduction to React, 2. GitHub User List) [task](https://github.com/pdffiller/js-react-school-tasks/blob/master/React-Redux/01-2-static-render-list.md)
+* GitHub User List React APP (static render): [src](https://github.com/Cath-kb/js-school/tree/master/lesson14/github-list-static), [dist](https://github.com/Cath-kb/js-school/tree/gh-pages/lesson14/github-list-static), [demo](https://cath-kb.github.io/js-school/lesson14/github-list-static)

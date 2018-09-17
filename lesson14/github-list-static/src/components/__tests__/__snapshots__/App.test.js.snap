@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should be rendered without errors 1`] = `
+<div
+  className="container my-5"
+>
+  <header
+    className="header"
+  >
+    <h1
+      className="title text-center mb-4"
+    >
+      Github User List Static
+    </h1>
+  </header>
+  <div
+    className="row my-4"
+  >
+    <div
+      className="col-sm-2"
+      data-id="user"
+    >
+      <img
+        alt="User Avatar"
+        className="w-100 img-fluid rounded mb-4 mb-sm-0"
+        src="https://avatars0.githubusercontent.com/u/18?v=4"
+      />
+    </div>
+    <div
+      className="col-sm-10"
+    >
+      <h2
+        className="d-flex align-items-center"
+      >
+        wayneeseguin
+      </h2>
+      <h3>
+        <a
+          href="https://api.github.com/users/wayneeseguin"
+          target="_blank"
+          title="Go to user profile"
+        >
+          https://api.github.com/users/wayneeseguin
+        </a>
+      </h3>
+    </div>
+  </div>
+  <div
+    className="row my-4"
+  >
+    <div
+      className="col-sm-2"
+      data-id="user"
+    >
+      <img
+        alt="User Avatar"
+        className="w-100 img-fluid rounded mb-4 mb-sm-0"
+        src="https://avatars0.githubusercontent.com/u/19?v=4"
+      />
+    </div>
+    <div
+      className="col-sm-10"
+    >
+      <h2
+        className="d-flex align-items-center"
+      >
+        brynary
+        <span
+          className="ml-4 badge badge-pill badge-dark"
+        >
+          admin
+        </span>
+      </h2>
+      <h3>
+        <a
+          href="https://api.github.com/users/brynary"
+          target="_blank"
+          title="Go to user profile"
+        >
+          https://api.github.com/users/brynary
+        </a>
+      </h3>
+    </div>
+  </div>
+</div>
+`;
