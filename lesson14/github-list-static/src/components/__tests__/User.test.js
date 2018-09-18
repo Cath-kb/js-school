@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from "react-test-renderer";
-import User from './../User';
-import users from './../__fixtures__/users';
+import User from '../User';
+import users from '../__fixtures__/users';
 
 const user = users[1];
 

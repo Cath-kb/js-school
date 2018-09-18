@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from "react-test-renderer";
-import UserList from './../UserList';
-import users from './../__fixtures__/users';
+import UserList from '../UserList';
+import users from '../__fixtures__/users';
 
 describe('UserList', () => {
   it('renders without crashing', () => {

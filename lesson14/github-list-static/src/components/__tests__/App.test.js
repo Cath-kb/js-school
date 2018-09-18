@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from "react-test-renderer";
-import App from './../App';
-import users from './../__fixtures__/users';
+import App from '../App';
+import users from '../__fixtures__/users';
 
 const app = {
   title: 'Test title',
