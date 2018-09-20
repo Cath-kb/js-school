@@ -1,7 +1,10 @@
 import { getUserInfo } from './mappers';
 import { OAUTH_TOKEN } from '../configs';
 
-const fetchGithubUser = userLogin => fetch(`https://api.github.com/users/${userLogin}`);
+const fetchGithubUser = userLogin => fetch(`https://api.github.com/users/${userLogin}`, {
+  cache: "no-cache",
+});
+
 const patchGithubUser = data => fetch(`https://api.github.com/user`, {
   method: 'PATCH',
   headers: {
