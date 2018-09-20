@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar should be rendered without errors 1`] = `
+<img
+  alt="User Avatar"
+  className="img-fluid mx-auto d-block rounded"
+  src="https://avatars3.githubusercontent.com/u/2164575?v=4"
+/>
+`;

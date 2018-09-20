@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Person should be rendered without errors 1`] = `
+Array [
+  <h2>
+    <a
+        href=""
+        onClick={[Function]}
+        title="Go to Edit Form"
+    >
+        John Doe
+    </a>
+</h2>,
+  <h3>
+    joe
+</h3>,
+  "",
+  <p>
+    Aldebaran
+</p>,
+  <h4>
+    <strong>
+        Bio:
+    </strong>
+</h4>,
+  <p>
+    no bio entered
+</p>,
+]
+`;

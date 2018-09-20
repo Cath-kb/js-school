@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Statistics should be rendered without errors 1`] = `
+Array [
+  <h4>
+    <strong>
+        Statistics:
+    </strong>
+</h4>,
+  <ul
+    className="list-group"
+>
+    <li
+        className="list-group-item d-flex justify-content-between align-items-center"
+    >
+        Repositories
+        : 
+        <span
+            className="badge badge-primary badge-pill"
+        >
+            5
+        </span>
+    </li>
+    <li
+        className="list-group-item d-flex justify-content-between align-items-center"
+    >
+        Following
+        : 
+        <span
+            className="badge badge-primary badge-pill"
+        >
+            0
+        </span>
+    </li>
+    <li
+        className="list-group-item d-flex justify-content-between align-items-center"
+    >
+        Followers
+        : 
+        <span
+            className="badge badge-primary badge-pill"
+        >
+            5
+        </span>
+    </li>
+</ul>,
+]
+`;
