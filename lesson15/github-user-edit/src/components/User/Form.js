@@ -12,11 +12,11 @@ class Form extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    const patch = this.getPatch(this.props.user.person, this.state.person);
+    const patch = this.getDiff(this.props.user.person, this.state.person);
     this.props.onSubmit(patch);
   };
 
-  getPatch = (initialPerson, person) => {
+  getDiff = (initialPerson, person) => {
     return Object.keys(person).reduce((diff, key) => {
       if (initialPerson[key] === person[key]) return diff;
       return {
@@ -26,9 +26,9 @@ class Form extends React.Component {
     }, {});
   };
 
-  hasPatch = () => {
-    const patch = this.getPatch(this.props.user.person, this.state.person);
-    return !!Object.values(patch).length;
+  isDirty = () => {
+    const diff = this.getDiff(this.props.user.person, this.state.person);
+    return !!Object.values(diff).length;
   };
 
   updateValue = name => event => {
@@ -39,6 +39,12 @@ class Form extends React.Component {
       },
     });
   };
+
+  componentWillUnmount() {
+    this.setState({
+      person: null,
+    });
+  }
 
   render() {
     const { onReset } = this.props;
@@ -99,7 +105,7 @@ class Form extends React.Component {
             </div>
             <div className="form-group d-flex justify-content-between">
               <button type="reset" className="btn btn-secondary" onClick={onReset}>Cancel</button>
-              <button type="submit" className="btn btn-primary" onClick={this.onSubmit} disabled={!this.hasPatch()}>Submit</button>
+              <button type="submit" className="btn btn-primary" onClick={this.onSubmit} disabled={!this.isDirty()}>Submit</button>
             </div>
           </form>
         </div>
