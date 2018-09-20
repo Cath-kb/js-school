@@ -35,8 +35,28 @@
 ## Lesson 8 (JS - OOP in JS, 5. School Simulator) [task](https://github.com/pdffiller/js-react-school-tasks/blob/master/JS%20Basics/07-oop-school.md)
 * School Simulator: [src](https://github.com/Cath-kb/js-school/tree/master/lesson8/simSchool), [demo](https://cath-kb.github.io/js-school/lesson8/simSchool/index.html)
 
-## Lesson 10 (Web App Basics 1. webpack npm) [task](https://github.com/pdffiller/js-react-school-tasks/blob/master/Web%20App%20Basics/01-webpack-npm.md)
+## Lesson 9 (JS - Symbol, iterator, set-map, promise, async)
+* no task
+
+## Lesson 10 (Web App Basics, 1. webpack npm) [task](https://github.com/pdffiller/js-react-school-tasks/blob/master/Web%20App%20Basics/01-webpack-npm.md)
 * Payroll Web App (use webpack, extract modules): [src](https://github.com/Cath-kb/js-school/tree/master/lesson10/payrollApp), [dist](https://github.com/Cath-kb/js-school/tree/gh-pages/lesson10/payrollApp), [demo](https://cath-kb.github.io/js-school/lesson10/payrollApp/)
 
 ## Lesson 11 (JS - EventLoop, MicroTasks, 6. GitHub User Profile) [task](https://github.com/pdffiller/js-react-school-tasks/blob/master/JS%20Basics/07-github-user-profile.md)
-* GitHub User Profile APP: [src](https://github.com/Cath-kb/js-school/tree/master/lesson11/githubProfile), [demo](https://cath-kb.github.io/js-school/lesson11/githubProfile/)
+* GitHub User Profile APP: [src](https://github.com/Cath-kb/js-school/tree/master/lesson11/githubProfile), [demo](https://cath-kb.github.io/js-school/lesson11/github-profile/)
+
+## Lesson 12 (Web App Basics, 2. Bundling, Babel loaders) [task](https://github.com/pdffiller/js-react-school-tasks/blob/master/Web%20App%20Basics/02-bundling-babel.md)
+* Cart APP: [src](https://github.com/Cath-kb/js-school/tree/master/lesson12/cartApp), [dist](https://github.com/Cath-kb/js-school/tree/gh-pages/lesson12/cartApp/), [demo](https://cath-kb.github.io/js-school/lesson12/cartApp/)
+
+  diff from lesson 12 Cart APP: [link](https://github.com/Cath-kb/js-school/commit/3ae821f9bce23c18261ce8bc1c464c46f82167ae)
+
+## Lesson 13 (Web App Basics, HTTP, Authentication, Service Workers)
+* no task
+
+## Lesson 14 (React/Redux - Introduction to React, 1.1. GitHub User Profile) [task](https://github.com/pdffiller/js-react-school-tasks/blob/master/React-Redux/01-1-static-render.md)
+* GitHub User Profile React APP (static render): [src](https://github.com/Cath-kb/js-school/tree/master/lesson14/github-profile-static), [dist](https://github.com/Cath-kb/js-school/tree/gh-pages/lesson14/github-profile-static), [demo](https://cath-kb.github.io/js-school/lesson14/github-profile-static)
+
+## Lesson 14 (React/Redux - Introduction to React, 1.2. GitHub User List) [task](https://github.com/pdffiller/js-react-school-tasks/blob/master/React-Redux/01-2-static-render-list.md)
+* GitHub User List React APP (static render): [src](https://github.com/Cath-kb/js-school/tree/master/lesson14/github-list-static), [dist](https://github.com/Cath-kb/js-school/tree/gh-pages/lesson14/github-list-static), [demo](https://cath-kb.github.io/js-school/lesson14/github-list-static)
+
+## Lesson 15 (React/Redux - Components, 2. Fetching and Updating User Profile) [task](https://github.com/pdffiller/js-react-school-tasks/blob/master/React-Redux/02-fetch-edit-save.md)
+* GitHub User Profile React APP (fetch, edit, save): [src](https://github.com/Cath-kb/js-school/tree/master/lesson15/github-user-edit), [dist](https://github.com/Cath-kb/js-school/tree/gh-pages/lesson15/github-user-edit), [demo](https://cath-kb.github.io/js-school/lesson15/github-user-edit)
