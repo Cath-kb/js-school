@@ -7,6 +7,7 @@ const user = {
     login: 'joe',
     company: '',
     location: 'Aldebaran',
+    origin: 'https://github.com/joe',
   },
   statistics: {
     repos: 5,

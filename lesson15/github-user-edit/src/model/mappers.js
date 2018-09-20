@@ -8,6 +8,7 @@ export const getUserInfo =  (data) => ({
     company: data.company || '',
     location: data.location || '',
     bio: data.bio || '',
+    origin: data.html_url,
   },
   statistics: {
     repos: data.public_repos || 0,

@@ -11,7 +11,10 @@ class Person extends React.Component {
 
     return (
       <React.Fragment>
-        <h2><a onClick={this.onClick} href="" title="Go to Edit Form">{person.name}</a></h2>
+        <h2 className="d-flex">
+          <a href={person.origin} title="see github profile" target="_blank">{person.name || 'no name'}</a>
+          <button type="button" className="btn btn-primary ml-2" onClick={this.onClick}>Edit</button>
+        </h2>
         <h3>{person.login}</h3>
         {person.company && <p>{person.company}</p>}
         {person.location && <p>{person.location}</p>}
