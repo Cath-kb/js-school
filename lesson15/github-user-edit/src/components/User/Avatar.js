@@ -2,7 +2,7 @@ import React from "react";
 
 const Avatar = ({avatar}) => (
   <img
-    className="img-fluid mx-auto d-block rounded"
+    className="img-fluid mb-4 rounded"
     src={avatar.url}
     alt="User Avatar"
   />

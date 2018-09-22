@@ -2,26 +2,25 @@
 
 exports[`Person should be rendered without errors 1`] = `
 Array [
-  <h2
-    className="d-flex"
->
+  <h2>
     <a
-        href="https://github.com/joe"
-        target="_blank"
-        title="see github profile"
+        className="link-styled"
+        href=""
+        onClick={[Function]}
+        title="Edit profile"
     >
         John Doe
     </a>
-    <button
-        className="btn btn-primary ml-2"
-        onClick={[Function]}
-        type="button"
-    >
-        Edit
-    </button>
 </h2>,
   <h3>
-    joe
+    <a
+        className="link-unstyled"
+        href="https://github.com/joe"
+        target="_blank"
+        title="see on github"
+    >
+        joe
+    </a>
 </h3>,
   "",
   <p>

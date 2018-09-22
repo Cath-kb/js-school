@@ -3,9 +3,10 @@ import React from 'react';
 import User from './User';
 import Form from './User/Form';
 
-import { MODE_VIEW, MODE_EDIT, MODE_LOAD } from '../consts';
-
 import { getGithubUser, updateGithubUser } from '../model/api';
+
+import { MODE_VIEW, MODE_EDIT, MODE_LOAD } from '../consts';
+import { GITHUB_USERNAME } from '../configs';
 
 class App extends React.Component {
   state = {
@@ -35,7 +36,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    getGithubUser('js-school-user')
+    getGithubUser(GITHUB_USERNAME)
       .then(user => this.setState({
         mode: MODE_VIEW,
         user,
@@ -53,7 +54,7 @@ class App extends React.Component {
           <h1 className="title text-center mb-4">{title}</h1>
         </header>
         {this.isMode(MODE_VIEW) && <User user={user} onClick={this.toggleMode} />}
-        {this.isMode(MODE_EDIT) && <Form user={user} onReset={this.toggleMode} onSubmit={this.updateUser} />}
+        {this.isMode(MODE_EDIT) && <Form initialUser={user} onReset={this.toggleMode} onSubmit={this.updateUser} />}
         {this.isMode(MODE_LOAD) && <h2 className="my-5 text-center">Loading&hellip;</h2>}
       </div>
     );

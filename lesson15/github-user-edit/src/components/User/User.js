@@ -11,9 +11,10 @@ class User extends React.Component {
 
     return (
       <div className="row">
-        <div className="col-md-4 text-center text-md-left mb-4">
+        <div className="col-md-4">
           <Avatar avatar={avatar} />
         </div>
+        <div className="w-100" />
         <div className="col-md-8">
           <Person person={person} onClick={onClick} />
           <Statistics data={statistics} />

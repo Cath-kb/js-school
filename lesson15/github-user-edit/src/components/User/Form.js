@@ -1,34 +1,25 @@
 import React from 'react';
 
+import { getObjDiff, hasObjDiff } from '../../utils/common';
+
 import Avatar from './Avatar';
 
 class Form extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      person: this.props.user.person,
+      person: this.props.initialUser.person,
     }
   };
 
   onSubmit = (e) => {
     e.preventDefault();
-    const patch = this.getDiff(this.props.user.person, this.state.person);
+    const patch = getObjDiff(this.props.initialUser.person, this.state.person);
     this.props.onSubmit(patch);
   };
 
-  getDiff = (initialPerson, person) => {
-    return Object.keys(person).reduce((diff, key) => {
-      if (initialPerson[key] === person[key]) return diff;
-      return {
-        ...diff,
-        [key]: person[key],
-      }
-    }, {});
-  };
-
   isDirty = () => {
-    const diff = this.getDiff(this.props.user.person, this.state.person);
-    return !!Object.values(diff).length;
+    return hasObjDiff(this.props.initialUser.person, this.state.person);
   };
 
   updateValue = name => event => {
@@ -40,15 +31,9 @@ class Form extends React.Component {
     });
   };
 
-  componentWillUnmount() {
-    this.setState({
-      person: null,
-    });
-  }
-
   render() {
     const { onReset } = this.props;
-    const {avatar, person: user } = this.props.user;
+    const {avatar, person: user } = this.props.initialUser;
     const { person } = this.state;
 
     return (

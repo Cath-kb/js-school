@@ -5,37 +5,39 @@ exports[`User should be rendered without errors 1`] = `
   className="row"
 >
   <div
-    className="col-md-4 text-center text-md-left mb-4"
+    className="col-md-4"
   >
     <img
       alt="User Avatar"
-      className="img-fluid mx-auto d-block rounded"
+      className="img-fluid mb-4 rounded"
       src="https://avatars3.githubusercontent.com/u/2164575?v=4"
     />
   </div>
   <div
+    className="w-100"
+  />
+  <div
     className="col-md-8"
   >
-    <h2
-      className="d-flex"
-    >
+    <h2>
       <a
-        href="https://github.com/joe"
-        target="_blank"
-        title="see github profile"
+        className="link-styled"
+        href=""
+        onClick={[Function]}
+        title="Edit profile"
       >
         John Doe
       </a>
-      <button
-        className="btn btn-primary ml-2"
-        onClick={[Function]}
-        type="button"
-      >
-        Edit
-      </button>
     </h2>
     <h3>
-      joe
+      <a
+        className="link-unstyled"
+        href="https://github.com/joe"
+        target="_blank"
+        title="see on github"
+      >
+        joe
+      </a>
     </h3>
     
     <p>

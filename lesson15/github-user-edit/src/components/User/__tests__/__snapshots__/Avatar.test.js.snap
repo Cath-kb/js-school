@@ -3,7 +3,7 @@
 exports[`Avatar should be rendered without errors 1`] = `
 <img
   alt="User Avatar"
-  className="img-fluid mx-auto d-block rounded"
+  className="img-fluid mb-4 rounded"
   src="https://avatars3.githubusercontent.com/u/2164575?v=4"
 />
 `;
