@@ -60,3 +60,9 @@
 
 ## Lesson 15 (React/Redux - Components, 2. Fetching and Updating User Profile) [task](https://github.com/pdffiller/js-react-school-tasks/blob/master/React-Redux/02-fetch-edit-save.md)
 * GitHub User Profile React APP (fetch, edit, save): [src](https://github.com/Cath-kb/js-school/tree/master/lesson15/github-user-edit), [dist](https://github.com/Cath-kb/js-school/tree/gh-pages/lesson15/github-user-edit), [demo](https://cath-kb.github.io/js-school/lesson15/github-user-edit)
+
+## Lesson 16 (React/Redux - React Patterns)
+* no task
+
+## Lesson 17 (React/Redux - Context & Routing, 3. GitHub Profile Manage) [task](https://github.com/pdffiller/js-react-school-tasks/blob/master/React-Redux/03-gh-user-manager.md)
+* GitHub Profile Manager React APP: [src](https://github.com/Cath-kb/js-school/tree/master/lesson17/github-profile-manager), [dist](https://github.com/Cath-kb/js-school/tree/gh-pages/lesson17/github-profile-manager), [demo](https://cath-kb.github.io/js-school/lesson17/github-profile-manager)
