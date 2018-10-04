@@ -1,0 +1,49 @@
+.link-styled {
+    text-decoration: underline;
+}
+.link-styled:hover,
+.link-styled:focus,
+.link-styled.active {
+    text-decoration: none;
+}
+.link-unstyled,
+.link-unstyled:hover,
+.link-unstyled:focus {
+    color: inherit;
+    text-decoration: none;
+}
+.link-external,
+.link-external:hover,
+.link-external:focus {
+    color: inherit;
+}
+.disabled,
+.active {
+    color: initial;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+.disabled,
+.disabled ~ .item-value {
+    opacity: .6;
+}
+.nav-item {
+    position: relative;
+}
+.nav-item:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-left: 1px solid;
+}
+.nav-item:first-child {
+    text-align: left;
+}
+.nav-item:last-child {
+    text-align: right;
+}
+.nav-item:first-child:before {
+    content: none;
+}
