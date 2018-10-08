@@ -9,7 +9,7 @@ import { DEFAULT_USER } from './configs';
 import './main.css';
 
 ReactDOM.render((
-  <Router>
+  <Router basename={process.env.PUBLIC_URL}>
     <Switch>
       <Route path="/:user_login" component={App} />
       <Route path="/" render={() => <Redirect to={`${DEFAULT_USER}`} />} />
