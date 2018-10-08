@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { STATISTIC_TITLES as titles } from '../consts';
+import UserProfileContext from '../model/UserProfileContext';
 
 const TabItem = ({title, value, props}) => {
   const isActive = () => {
@@ -28,23 +29,23 @@ const TabItem = ({title, value, props}) => {
   )
 };
 
-const Tabs = ({data, props}) => {
-  const keys = Object.keys(data);
-
-  return (
-    <React.Fragment>
-      <ul className="nav nav-fill">
-        {keys.map(key => (
-          <TabItem
-            key={key}
-            title={titles[key] || key}
-            value={data[key]}
-            props={props}
-          />
-        ))}
-      </ul>
-    </React.Fragment>
-  );
-};
+const Tabs = ({props}) => (
+  <UserProfileContext.Consumer>
+    {
+      ({statistics: data }) => (
+        <ul className="nav nav-fill">
+          {Object.keys(data).map(key => (
+            <TabItem
+              key={key}
+              title={titles[key] || key}
+              value={data[key]}
+              props={props}
+            />
+          ))}
+        </ul>
+      )
+    }
+  </UserProfileContext.Consumer>
+);
 
 export default Tabs;

@@ -3,6 +3,7 @@ import React from 'react';
 import PersonInfo from "./Person";
 
 import { updateGithubUser } from '../model/api';
+import UserProfileContext from '../model/UserProfileContext';
 import { hasObjDiff, getObjDiff } from "../utils/common";
 
 class EditForm extends React.Component {
@@ -160,5 +161,11 @@ class EditForm extends React.Component {
   }
 }
 
-export default EditForm;
+export default props => (
+  <UserProfileContext.Consumer>
+    {
+      user => <EditForm initialUser={user} {...props} />
+    }
+  </UserProfileContext.Consumer>
+);
 

@@ -26,11 +26,7 @@ class Followers extends React.Component {
   render() {
     const { isLoading, userList } = this.state;
 
-    return (
-      <React.Fragment>
-        {isLoading ?  <Loading /> : <UserList users={userList} />}
-      </React.Fragment>
-    );
+    return isLoading ?  <Loading /> : <UserList users={userList} />;
   }
 }
 
