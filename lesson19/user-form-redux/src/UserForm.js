@@ -1,4 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import {actions} from './store';
 
 const UserForm = ({ name, age, isStudent, onNameChanged, onAgeChanged, onIsStudentChanged }) => (
   <form>
@@ -8,6 +11,7 @@ const UserForm = ({ name, age, isStudent, onNameChanged, onAgeChanged, onIsStude
         <input
           id="name"
           type="text"
+          placeholder="User Name"
           className="form-control"
           value={name}
           onChange={onNameChanged}
@@ -15,12 +19,14 @@ const UserForm = ({ name, age, isStudent, onNameChanged, onAgeChanged, onIsStude
       </div>
     </div>
     <div className="form-group row">
-      <label className="col-sm-2 col-form-label" htmlFor="age">User Name</label>
-      <div className="col-sm-3">
+      <label className="col-sm-2 col-form-label" htmlFor="age">User Age</label>
+      <div className="col-sm-2">
         <input
           id="age"
           type="number"
           className="form-control"
+          min="0"
+          max="255"
           value={age}
           onChange={onAgeChanged}
         />
@@ -34,7 +40,7 @@ const UserForm = ({ name, age, isStudent, onNameChanged, onAgeChanged, onIsStude
             id="is-student"
             type="checkbox"
             className="form-check-input"
-            value={isStudent}
+            checked={isStudent}
             onChange={onIsStudentChanged}
           />
           <label htmlFor="is-student" className="form-check-label">Student</label>
@@ -44,4 +50,12 @@ const UserForm = ({ name, age, isStudent, onNameChanged, onAgeChanged, onIsStude
   </form>
 );
 
-export default UserForm;
+const mapStateToProps = state => state;
+
+const handlers = {
+    onNameChanged: ({ target }) => actions.setName(target.value),
+    onAgeChanged: ({ target }) => actions.setAge(target.value),
+    onIsStudentChanged: () => actions.toggleIsStudent(),
+};
+
+export default connect(mapStateToProps, handlers)(UserForm);

@@ -1,17 +1,17 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 const UserInfo = ({ name, age, isStudent }) => (
   <div className="row">
     <div className="col-sm-6">
-      <samp>
+      <samp className="form-control" readOnly={true}>
         {isStudent ? 'Student ' : ''}
-        {name}
-        {' is '}
-        {age}
-        {' years old.'}
+        {name || '"Mr. X"'}
+        {age !== '' ? ` is ${age} years old.` : ' has no age.'}
       </samp>
     </div>
   </div>
 );
+const mapStateToProps = state => state;
 
-export default UserInfo;
+export default connect(mapStateToProps)(UserInfo);
