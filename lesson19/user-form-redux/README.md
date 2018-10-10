@@ -1,0 +1,2 @@
+## Lesson 19 (React/Redux - Redux Basics) [task](https://github.com/pdffiller/js-react-school-tasks/blob/master/React-Redux/05-redux-basics.md)
+* User Form Redux APP: [src](https://github.com/Cath-kb/js-school/tree/master/lesson19/user-form-redux), [dist](https://github.com/Cath-kb/js-school/tree/gh-pages/lesson19/user-form-redux), [demo](https://cath-kb.github.io/js-school/lesson19/user-form-redux)
