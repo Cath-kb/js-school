@@ -1,7 +1,7 @@
-import { saveTodo } from './ToDoList';
+import { addTodo } from './ToDoList';
 import { compose } from './redux-utils';
 import todos from './todos';
 
 export const initTodos = ({ dispatch }) => todos.map(
-  compose(dispatch, saveTodo)
+  compose(dispatch, addTodo)
 );

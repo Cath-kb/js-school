@@ -20,13 +20,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DScheglov/js-react-school-todolist.git"
+    "url": "git+https://github.com/Cath-kb/js-school.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DScheglov/js-react-school-todolist/issues"
+    "url": "https://github.com/Cath-kb/js-school/issues"
   },
-  "homepage": "https://github.com/DScheglov/js-react-school-todolist#readme",
-  "description": ""
+  "description": "",
+  "homepage": "."
 }

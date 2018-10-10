@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-// import { createSelector } from 'reselect';
 
 import { getFilterFunc, filterList, get } from './helpers';
 import {
@@ -11,35 +10,51 @@ import {
   domainSelector,
 } from '../redux-utils';
 
-
 const _toggleTodo = action('TODO::TOGGLE');
 export const toggleTodo = id => _toggleTodo({ id });
 export const saveTodo = action('TODO::SAVE');
+export const addTodo = action('TODO::ADD');
+const _deleteTodo = action('TODO::DELETE');
+export const deleteTodo = id => _deleteTodo({ id });
+const _restoreTodo = action('TODO::RESTORE');
+export const restoreTodo = id => _restoreTodo({ id });
 export const setFilter = action('TODO::SET-FILTER');
-// toggleTodo(id)
 
 const initialTodoState = {
   id: null,
   name: '',
   completed: false,
+  deleted: false,
 }
 
 const todo = createReducer(initialTodoState, {
   [_toggleTodo.type]: state => ({
     ...state, completed: !state.completed,
   }),
+  [_deleteTodo.type]: state => ({
+    ...state, deleted: true,
+  }),
+  [_restoreTodo.type]: state => ({
+    ...state, deleted: false,
+  }),
   [saveTodo.type]: mergePayload,
 });
 
 const todoLookup = lookupReducer(todo);
 
+let currentId = 0;
+
 const byId = createReducer({}, {
   [_toggleTodo.type]: todoLookup,
+  [_deleteTodo.type]: todoLookup,
+  [_restoreTodo.type]: todoLookup,
   [saveTodo.type]: todoLookup,
+  [addTodo.type]: (state, {payload}) => todoLookup(state, saveTodo({...payload, id: ++currentId, deleted: false })),
 });
 
 const ids = createReducer([], {
   [saveTodo.type]: (state, { payload} ) => include(state, payload.id),
+  [addTodo.type]: state => include(state, currentId),
 });
 
 const filter = createReducer('all', {

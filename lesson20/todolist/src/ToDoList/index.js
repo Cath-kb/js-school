@@ -1,5 +1,5 @@
 import ToDoList from './ToDoList';
-import todos, { toggleTodo, saveTodo, domain } from './store';
+import todos, { addTodo, toggleTodo, saveTodo, domain } from './store';
 
 export default ToDoList;
-export { todos, toggleTodo, saveTodo, domain };
+export { addTodo, todos, toggleTodo, saveTodo, domain };

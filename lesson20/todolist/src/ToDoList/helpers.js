@@ -1,12 +1,14 @@
-const True = () => true;
 const False = () => false;
 const isCompleted = ({ completed }) => completed;
 const isNotCompleted = ({ completed }) => !completed;
+const isDeleted = ({ deleted }) => deleted;
+const isNotDeleted = ({ deleted }) => !deleted;
 
 export const getFilterFunc = filter => (
-  filter === 'all' ? True :
-  filter === 'completed' ? isCompleted :
-  filter === 'not-completed' ? isNotCompleted :
+  filter === 'all' ? isNotDeleted :
+  filter === 'completed' ? todo => isCompleted(todo) && isNotDeleted(todo) :
+  filter === 'not-completed' ? todo => isNotCompleted(todo) && isNotDeleted(todo) :
+  filter === 'deleted' ? isDeleted :
   False
 );
 
