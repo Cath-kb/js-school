@@ -1,0 +1,32 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "react": "16.4.2",
+    "react-dom": "16.4.2",
+    "react-redux": "5.0.7",
+    "react-scripts": "1.1.4",
+    "redux": "4.0.0",
+    "reselect": "3.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DScheglov/js-react-school-todolist.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DScheglov/js-react-school-todolist/issues"
+  },
+  "homepage": "https://github.com/DScheglov/js-react-school-todolist#readme",
+  "description": ""
+}
