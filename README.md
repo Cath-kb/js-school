@@ -60,3 +60,21 @@
 
 ## Lesson 15 (React/Redux - Components, 2. Fetching and Updating User Profile) [task](https://github.com/pdffiller/js-react-school-tasks/blob/master/React-Redux/02-fetch-edit-save.md)
 * GitHub User Profile React APP (fetch, edit, save): [src](https://github.com/Cath-kb/js-school/tree/master/lesson15/github-user-edit), [dist](https://github.com/Cath-kb/js-school/tree/gh-pages/lesson15/github-user-edit), [demo](https://cath-kb.github.io/js-school/lesson15/github-user-edit)
+
+## Lesson 16 (React/Redux - React Patterns)
+* no task
+
+## Lesson 17 (React/Redux - Context & Routing, 3. GitHub Profile Manage) [task](https://github.com/pdffiller/js-react-school-tasks/blob/master/React-Redux/03-gh-user-manager.md)
+* GitHub Profile Manager React APP: [src](https://github.com/Cath-kb/js-school/tree/master/lesson17/github-profile-manager), [dist](https://github.com/Cath-kb/js-school/tree/gh-pages/lesson17/github-profile-manager), [demo](https://cath-kb.github.io/js-school/lesson17/github-profile-manager)
+
+## Lesson 18 (React/Redux - DatePicker workshop)
+* no task
+
+## Lesson 19 (React/Redux - Redux Basics) [task](https://github.com/pdffiller/js-react-school-tasks/blob/master/React-Redux/05-redux-basics.md)
+* User Form Redux APP: [src](https://github.com/Cath-kb/js-school/tree/master/lesson19/user-form-redux), [dist](https://github.com/Cath-kb/js-school/tree/gh-pages/lesson19/user-form-redux), [demo](https://cath-kb.github.io/js-school/lesson19/user-form-redux)
+
+## Lesson 20 (React/Redux - Redux Selectors & Normalization) [task](https://github.com/pdffiller/js-react-school-tasks/blob/master/React-Redux/06-redux-selectors.md)
+* ToDo List Redux APP: [src](https://github.com/Cath-kb/js-school/tree/master/lesson20/todolist), [dist](https://github.com/Cath-kb/js-school/tree/gh-pages/lesson20/todolist), [demo](https://cath-kb.github.io/js-school/lesson20/todolist)
+
+## Lesson 21 (React/Redux - Async in Redux) [task](https://github.com/pdffiller/js-react-school-tasks/blob/master/React-Redux/07-redux-thunks.md)
+* GitHub Profile Redux Thunk APP: [src](https://github.com/Cath-kb/js-school/tree/master/lesson21/github-profile-thunks), [dist](https://github.com/Cath-kb/js-school/tree/gh-pages/lesson21/github-profile-thunks), [demo](https://cath-kb.github.io/js-school/lesson21/github-profile-thunks)
