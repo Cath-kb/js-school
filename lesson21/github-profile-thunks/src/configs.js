@@ -1,1 +1,1 @@
-export const DEFAULT_USER = 'Cath-kb';
+export const DEFAULT_USER = 'js-school-user';
