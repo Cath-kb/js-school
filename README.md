@@ -75,3 +75,6 @@
 
 ## Lesson 20 (React/Redux - Redux Selectors & Normalization) [task](https://github.com/pdffiller/js-react-school-tasks/blob/master/React-Redux/06-redux-selectors.md)
 * ToDo List Redux APP: [src](https://github.com/Cath-kb/js-school/tree/master/lesson20/todolist), [dist](https://github.com/Cath-kb/js-school/tree/gh-pages/lesson20/todolist), [demo](https://cath-kb.github.io/js-school/lesson20/todolist)
+
+## Lesson 21 (React/Redux - Async in Redux) [task](https://github.com/pdffiller/js-react-school-tasks/blob/master/React-Redux/07-redux-thunks.md)
+* GitHub Profile Redux Thunk APP: [src](https://github.com/Cath-kb/js-school/tree/master/lesson21/github-profile-thunks), [dist](https://github.com/Cath-kb/js-school/tree/gh-pages/lesson21/github-profile-thunks), [demo](https://cath-kb.github.io/js-school/lesson21/github-profile-thunks)
