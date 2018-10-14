@@ -25,7 +25,7 @@
     const segmentCount = 3; // <-- SET UP CORRECT VALUE
 
     const l = window.location;
-    if (/lesson17\/github-profile-manager/.test(l.pathname)) {
+    if (/lesson17\/github-profile-manager/.test(l.pathname) || /lesson21\/github-profile-thunks/.test(l.pathname)) {
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
         l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?p=/' +
@@ -35,7 +35,7 @@
       );
     }
   </script>
-  <title>Site not found &middot; GitHub Pages</title>
+  <title>Site not found &middot; GitHub Pages Stub</title>
   <style type="text/css" media="screen">
     body {
       background-color: #f1f1f1;
