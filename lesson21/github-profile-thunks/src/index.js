@@ -1,12 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import { getUserInfo } from './mappers';
-
-import userData from './user.json';
-const userInfo = getUserInfo(userData);
+import Root from './Root';
 
 ReactDOM.render(
-  <App user={userInfo} />,
+  <Root />,
   document.getElementById('root')
 );
